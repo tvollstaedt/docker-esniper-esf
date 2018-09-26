@@ -1,6 +1,5 @@
-MAINTAINER Thomas Vollstädt <tv@engage.de>
-
 FROM php:5-apache
+MAINTAINER Thomas Vollstädt <tv@engage.de>
 
 RUN apt-get update && \
     apt-get install -y curl git libfreetype6-dev libjpeg62-turbo-dev libpng-dev libcurl4-gnutls-dev build-essential automake && \
