@@ -9,6 +9,10 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     docker-php-ext-install -j$(nproc) gd
 
 RUN git clone https://github.com/syssi/es-f.git && \
+    sed -i "s#git://yryie.git.sourceforge.net/gitroot/yryie/yryie#git://git.code.sf.net/p/yryie/code#g" .gitmodules && \
+    sed -i "s#git://yuelo.git.sourceforge.net/gitroot/yuelo/yuelo#git://git.code.sf.net/p/yuelo/code#g" .gitmodules && \
+    git submodule init && \
+    git submodule update && \
     cp -a es-f/* /var/www/html/ && \
     git clone git://git.code.sf.net/p/esniper/git esniper-git && \
     cd esniper-git && \
