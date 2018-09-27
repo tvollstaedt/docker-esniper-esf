@@ -23,3 +23,5 @@ RUN git clone https://github.com/syssi/es-f.git && \
     aclocal && \
     make && \
     make install
+
+VOLUME ["/var/www/html"]
