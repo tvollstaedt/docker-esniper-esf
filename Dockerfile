@@ -22,6 +22,7 @@ RUN git clone https://github.com/syssi/es-f.git && \
     ./configure && \
     aclocal && \
     make && \
-    make install
+    make install && \
+    chown -R www-data:www-data /var/www/html
 
 VOLUME ["/var/www/html"]
